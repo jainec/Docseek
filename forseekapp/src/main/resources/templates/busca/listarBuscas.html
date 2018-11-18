@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://thymeleaf.org"
+       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+    <head>
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+        <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="/materialize/css/materialize.min.css"  media="screen,projection"/>
+
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <link rel="stylesheet" href="style/styleCss.css" />
+
+        <title>DocseekApp</title>
+    </head>
+    <body>
+
+        <nav>
+            <div class="row nav-wrapper grey lighten-5 z-depth-0">
+                <div class="col s2">
+                    <a href="/"> <img class="imgNav" th:src="@{logodoc.png}" /> </a>
+                </div>
+                <div class="col s5">
+                    <form method="post">
+                        <div class="row">
+                            <div class="col s11">
+                                <div class="boxborda2">
+                                    <div class="input-field boxInput2">
+                                        <input placeholder="Buscar" id="search" type="search" required name="nome">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col s1">
+                                <button class="btnBorder grey lighten-5" type="submit"><i class="material-icons blackIcon">search</i></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col s1">
+                </div>
+                <div class="col s4">
+                    <ul id="nav-mobile" class="right hide-on-med-and-down grey lighten-5 z-depth-0">
+                        <li><a href=""><i class="material-icons blackIcon">apps</i></a></li>
+                        <li><a href=""><i class="material-icons blackIcon">notifications</i></a></li>
+                        <li><a href=""><i class="material-icons blackIcon">account_circle</i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+
+            <div class="row" th:each="query : ${query}">
+                <div class="col s12">
+                    <div class="marginResult">
+                    <h5>Resultados para: <span th:text="${query}"></span></h5>
+                    </div>
+                </div>
+            </div>
+
+            <div th:each="busca : ${buscas}" >
+                <div class="row">
+                    <a th:href="${busca.caminho}"><p><span th:text="${busca.nome}"></span></p> </a>
+                </div>
+            </div>
+        </div>
+
+        <!--JavaScript at end of body for optimized loading-->
+        <script type="text/javascript" src="/materialize/js/materialize.min.js"></script>
+    </body>
+</html>

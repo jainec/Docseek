@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="/materialize/css/materialize.min.css"  media="screen,projection"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link rel="stylesheet" href="style/styleCss.css" />
+
+    <title>DocseekApp</title>
+
+</head>
+<body>
+
+    <nav>
+        <div class="row nav-wrapper grey lighten-5 z-depth-0">
+            <div class="col s2">
+                <a href="/"> <img class="imgNav" th:src="@{logodoc.png}" /> </a>
+            </div>
+            <div class="col s5">
+            </div>
+            <div class="col s1">
+            </div>
+            <div class="col s4">
+                <ul id="nav-mobile" class="right hide-on-med-and-down grey lighten-5 z-depth-0">
+                    <li><a href=""><i class="material-icons blackIcon">apps</i></a></li>
+                    <li><a href=""><i class="material-icons blackIcon">notifications</i></a></li>
+                    <li><a href=""><i class="material-icons blackIcon">account_circle</i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div>
+            <h2 class="center-align">Busca Refinada</h2>
+            <div class="row">
+                <div class="col s10 offset-s1">
+                    <h4 class="center-align">Você pode melhorar a sua busca utilizando os operadores abaixo</h4>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div>
+                <strong><p class="left-align">Operador Lógico AND</p></strong>
+                <p>
+                    Quando você separa cada palavra-chave de uma consulta com um espaço, o Docseek lista as páginas
+                    contendo todos os termos. O espaço é equivalente ao operador AND (o E lógico). Dessa forma, sempre
+                    que você quiser usar o operador lógico AND basta você usar espaços. Exemplo: a pesquisa
+                    «universidade serviço» mostra todos os documentos contendo, simultaneamente,
+                    os termos universidade e serviço.
+                </p>
+            </div>
+            <div>
+                <strong><p class="left-align">Operador Lógico OR</p></strong>
+                <p>
+                    Se você quiser encontrar todos os documentos com, pelo menos, um dos termos digitados, você pode usar
+                    o operador OR (o OU lógico). Atenção: este deve ser digitado em letras maiúsculas, se não o Docseek
+                    vai identificar a palavra "or" e não o operador. Além disso, você pode fazer consultas com o OR utilizando
+                    ou não parênteses. Se não for utilizado parênteses a consulta seguirá o padrão do Docseek, isto é,
+                    buscará as palavras da esquerda para a direita, exemplo: a pesquisa «universidade OR serviço sergipe
+                    OR ciência» exibe todos os documentos que possuem as palavras universade OU serviço E sergipe
+                    (simultaneamente) OU ciência, e claro, documentos que possuem todas elas também são mostrados.
+                    Por outro lado, se você quiser utilizar parênteses, então deve utilizá-los em todas as palavras da
+                    busca, exemplo: a pesquisa «(cerqueira) (universidade OR serviço)» mostra todos os documentos que
+                    têm os termos cerqueria E universidade OU cerqueira E serviço, e também os que possuem todos os três
+                    termos.
+                </p>
+            </div>
+            <div>
+                <strong class="left-align">Operador Curinga (*)</strong>
+                <p>
+                    É possível alargar o âmbito da sua pesquisa usando o asterisco (*) como um sinal de substituição.
+                    Assim, a busca da cadeia de caracteres "Ser****" mostrará uma lista de documentos que contêm palavras
+                    começando por "Ser" seguidas de mais quatro letras quaisquer, como Sergipe, Serviço, entre outras.
+                </p>
+            </div>
+        </div>
+
+        <div class="center-align btnMargin" >
+            <a href="/" class="btn waves-effect waves-light" ><i class="material-icons left">arrow_back</i>voltar</a>
+        </div>
+    </div>
+
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="/materialize/js/materialize.min.js"></script>
+</body>
+
+</html>
